@@ -1,0 +1,1071 @@
+/*
+ * portfolio-dark.css
+ * Dark minimal theme override for Mahedi Hassan's portfolio.
+ * Loaded AFTER css/style.css — overrides visual properties only.
+ * All original JS hooks and class names are preserved.
+ *
+ * Design system:
+ *   --bg-base:    #0a0a0f   (page background)
+ *   --bg-surface: #12121a   (cards / sections)
+ *   --bg-raised:  #1a1a2e   (elevated cards)
+ *   --accent:     #4f8ef7   (primary blue)
+ *   --accent-2:   #7c3aed   (purple — AI/ML)
+ *   --accent-3:   #10b981   (green — databases)
+ *   --accent-4:   #f59e0b   (amber — web3)
+ *   --text:       #e8eaf6
+ *   --text-muted: #8892a4
+ *   --border:     rgba(255,255,255,0.07)
+ */
+
+/* =========================================================
+   0. CSS CUSTOM PROPERTIES
+   ========================================================= */
+:root {
+  --bg-base:      #0a0a0f;
+  --bg-surface:   #12121a;
+  --bg-raised:    #1a1a2e;
+  --accent:       #4f8ef7;
+  --accent-hover: #3a7ce8;
+  --accent-2:     #7c3aed;
+  --accent-3:     #10b981;
+  --accent-4:     #f59e0b;
+  --text:         #e8eaf6;
+  --text-muted:   #8892a4;
+  --border:       rgba(255, 255, 255, 0.07);
+  --radius:       12px;
+  --radius-sm:    8px;
+  --transition:   0.3s ease;
+  --fill-color:   #4f8ef7; /* default skill bar colour — overridden per-bar */
+}
+
+/* =========================================================
+   1. BASE
+   ========================================================= */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-base) !important;
+  color: var(--text) !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 15px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); transition: color var(--transition); }
+a:hover { color: var(--accent-hover); text-decoration: none; }
+
+h1, h2, h3, h4, h5, h6 { color: var(--text) !important; }
+p { color: var(--text-muted); }
+
+/* =========================================================
+   2. SCROLL PROGRESS BAR
+   ========================================================= */
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  z-index: 9999;
+  transition: width 0.1s linear;
+  border-radius: 0 3px 3px 0;
+}
+
+/* =========================================================
+   3. NAVBAR
+   ========================================================= */
+.ftco_navbar {
+  background: transparent !important;
+  padding: 22px 0 !important;
+  transition: background var(--transition), padding var(--transition), box-shadow var(--transition) !important;
+}
+
+.ftco_navbar.scrolled {
+  background: rgba(10, 10, 15, 0.95) !important;
+  padding: 12px 0 !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+.ftco_navbar.scrolled.awake {
+  background: rgba(10, 10, 15, 0.98) !important;
+}
+
+.navbar-brand {
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+  letter-spacing: -0.5px;
+}
+
+.brand-accent {
+  color: var(--accent) !important;
+}
+
+.ftco_navbar .nav-link {
+  color: var(--text-muted) !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem !important;
+  position: relative;
+  transition: color var(--transition) !important;
+}
+
+.ftco_navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width var(--transition);
+}
+
+.ftco_navbar .nav-link:hover,
+.ftco_navbar .nav-link.active {
+  color: var(--text) !important;
+}
+
+.ftco_navbar .nav-link:hover::after,
+.ftco_navbar .nav-link.active::after {
+  width: 60%;
+}
+
+/* Hamburger */
+.navbar-toggler {
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  background: none !important;
+}
+
+/* =========================================================
+   4. HERO SECTION
+   ========================================================= */
+.hero-wrap {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-base) !important;
+}
+
+/* Animated gradient background blob */
+.hero-bg-animated {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-bg-animated::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(ellipse at center, rgba(79, 142, 247, 0.15) 0%, transparent 70%);
+  animation: heroBlob1 12s ease-in-out infinite alternate;
+}
+
+.hero-bg-animated::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 55%;
+  height: 70%;
+  background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
+  animation: heroBlob2 15s ease-in-out infinite alternate;
+}
+
+@keyframes heroBlob1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(5%, 8%) scale(1.1); }
+}
+
+@keyframes heroBlob2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-5%, -6%) scale(1.08); }
+}
+
+.hero-wrap .overlay {
+  background: rgba(0, 0, 0, 0.35) !important;
+  z-index: 1;
+}
+
+.hero-wrap .container,
+.hero-wrap .row { position: relative; z-index: 2; }
+
+.hero-wrap .subheading {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--accent) !important;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.hero-name {
+  font-size: clamp(2.8rem, 6vw, 5rem) !important;
+  font-weight: 800 !important;
+  color: var(--text) !important;
+  line-height: 1.1 !important;
+  margin-bottom: 0.5rem !important;
+  letter-spacing: -1px;
+}
+
+.hero-role {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem) !important;
+  font-weight: 400 !important;
+  color: var(--text-muted) !important;
+  margin-bottom: 1rem !important;
+}
+
+.hero-role .wrap {
+  color: var(--accent) !important;
+  font-weight: 600;
+}
+
+/* TxtRotate cursor */
+.txt-rotate > .wrap {
+  border-right: 2px solid var(--accent) !important;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Hero CTA buttons */
+.btn-primary-dark {
+  display: inline-block;
+  background: var(--accent) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: var(--radius-sm) !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.03em;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition) !important;
+  box-shadow: 0 4px 20px rgba(79, 142, 247, 0.3);
+}
+
+.btn-primary-dark:hover {
+  background: var(--accent-hover) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(79, 142, 247, 0.45) !important;
+  color: #fff !important;
+}
+
+.btn-outline-dark-custom {
+  display: inline-block;
+  background: transparent !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  transition: border-color var(--transition), background var(--transition), transform var(--transition) !important;
+}
+
+.btn-outline-dark-custom:hover {
+  border-color: var(--accent) !important;
+  background: rgba(79, 142, 247, 0.08) !important;
+  color: var(--accent) !important;
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  display: inline-block;
+  background: transparent !important;
+  color: var(--text-muted) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  transition: all var(--transition) !important;
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+/* Hero social icons */
+.hero-social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.hero-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--text-muted) !important;
+  font-size: 1.1rem;
+  transition: all var(--transition);
+}
+
+.hero-social a:hover {
+  border-color: var(--accent);
+  color: var(--accent) !important;
+  background: rgba(79, 142, 247, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Mouse scroll icon */
+.mouse-icon {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.mouse-wheel span {
+  background: var(--accent) !important;
+}
+
+/* =========================================================
+   5. SECTION COMMON
+   ========================================================= */
+.ftco-section {
+  background: var(--bg-base) !important;
+  padding: 6rem 0 !important;
+}
+
+/* Alternating surface tint */
+.ftco-about,
+.ftco-project,
+.contact-section {
+  background: var(--bg-surface) !important;
+}
+
+.heading-section h1.big,
+.heading-section h1.big.big-2 {
+  color: rgba(255, 255, 255, 0.03) !important;
+  font-size: clamp(4rem, 10vw, 9rem) !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+}
+
+.heading-section h2 {
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+}
+
+.heading-section p {
+  color: var(--text-muted) !important;
+}
+
+.text-muted-custom {
+  color: var(--text-muted) !important;
+}
+
+/* =========================================================
+   6. ABOUT SECTION
+   ========================================================= */
+.ftco-about .img-about .img {
+  min-height: 500px;
+}
+
+.ftco-about .img-about .overlay {
+  background: rgba(79, 142, 247, 0.08) !important;
+}
+
+.about-info li {
+  border-bottom: 1px solid var(--border) !important;
+  padding: 10px 0 !important;
+  color: var(--text-muted) !important;
+}
+
+.about-info li:last-child { border-bottom: none !important; }
+
+.about-info li span:first-child {
+  color: var(--text-muted) !important;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  min-width: 90px;
+}
+
+.about-info li span:last-child {
+  color: var(--text) !important;
+  font-weight: 500;
+}
+
+.about-info li a {
+  color: var(--accent) !important;
+}
+
+/* Tech tag pills */
+.about-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.tag {
+  display: inline-block;
+  background: rgba(79, 142, 247, 0.12);
+  color: var(--accent) !important;
+  border: 1px solid rgba(79, 142, 247, 0.25);
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  letter-spacing: 0.03em;
+  transition: background var(--transition);
+}
+
+.tag:hover {
+  background: rgba(79, 142, 247, 0.22);
+}
+
+/* Available badge */
+.available-badge {
+  display: inline-block;
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--accent-3) !important;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  letter-spacing: 0.03em;
+}
+
+/* About counter */
+.counter-wrap .text p {
+  color: var(--text-muted) !important;
+  font-size: 1rem;
+}
+
+.counter-wrap .number {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  color: var(--accent) !important;
+  display: block;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+/* =========================================================
+   7. RESUME SECTION
+   ========================================================= */
+.resume-nav {
+  position: sticky;
+  top: 100px;
+}
+
+#navi ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#navi ul li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted) !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--transition);
+  border: 1px solid transparent;
+  margin-bottom: 6px;
+  text-decoration: none !important;
+}
+
+#navi ul li a:hover,
+#navi ul li a.current {
+  background: rgba(79, 142, 247, 0.1) !important;
+  color: var(--accent) !important;
+  border-color: rgba(79, 142, 247, 0.2);
+}
+
+.nav-icon { font-size: 1rem; }
+
+/* Resume timeline cards */
+.resume-wrap {
+  background: var(--bg-raised) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  padding: 24px 20px !important;
+  margin-bottom: 20px !important;
+  transition: border-color var(--transition), transform var(--transition) !important;
+}
+
+.resume-wrap:hover {
+  border-color: rgba(79, 142, 247, 0.3) !important;
+  transform: translateY(-2px);
+}
+
+.resume-wrap .icon {
+  width: 50px !important;
+  height: 50px !important;
+  min-width: 50px !important;
+  background: rgba(79, 142, 247, 0.12) !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(79, 142, 247, 0.2) !important;
+  color: var(--accent) !important;
+  flex-shrink: 0;
+}
+
+.resume-wrap .icon span[class^="flaticon"]::before {
+  color: var(--accent) !important;
+}
+
+.resume-wrap .text .date {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent) !important;
+  background: rgba(79, 142, 247, 0.1);
+  border-radius: 20px;
+  padding: 3px 12px;
+  margin-bottom: 8px;
+  letter-spacing: 0.03em;
+}
+
+.resume-wrap .text h2 {
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+  margin-bottom: 4px !important;
+}
+
+.resume-wrap .text .position {
+  color: var(--accent) !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.resume-wrap .text p {
+  color: var(--text-muted) !important;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+/* Experience tech tags */
+.exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+
+.tag-sm {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted) !important;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  letter-spacing: 0.03em;
+}
+
+/* Heading for resume pages */
+.page .heading {
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+  margin-bottom: 24px !important;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* =========================================================
+   8. SKILLS
+   ========================================================= */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.skill-category {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: border-color var(--transition);
+}
+
+.skill-category:hover {
+  border-color: rgba(79, 142, 247, 0.25);
+}
+
+.skill-cat-title {
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  color: var(--text-muted) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 20px !important;
+}
+
+.skill-bar-wrap { display: flex; flex-direction: column; gap: 14px; }
+
+.skill-bar-item {}
+
+.sb-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.sb-label span:first-child {
+  color: var(--text) !important;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.sb-label span:last-child {
+  color: var(--text-muted) !important;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.sb-track {
+  height: 5px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.sb-fill {
+  height: 100%;
+  width: 0%; /* animated via JS */
+  background: var(--fill-color, var(--accent));
+  border-radius: 10px;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =========================================================
+   9. PROJECTS SECTION
+   ========================================================= */
+.ftco-project {
+  background: var(--bg-surface) !important;
+}
+
+.project-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(79, 142, 247, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.project-img-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img { transform: scale(1.06); }
+
+/* Gradient placeholder images */
+.project-img--gradient-1 {
+  background: linear-gradient(135deg, #1a1a3e 0%, #0f2460 50%, #1a1050 100%);
+}
+
+.project-img--gradient-2 {
+  background: linear-gradient(135deg, #0f2e1a 0%, #0a3d1f 50%, #1a3d28 100%);
+}
+
+.project-img--gradient-3 {
+  background: linear-gradient(135deg, #2d1b00 0%, #3d2400 50%, #4a2e00 100%);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.project-card:hover .project-overlay { opacity: 1; }
+
+.project-link {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff !important;
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.project-link:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  color: #fff !important;
+}
+
+.project-link-disabled {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-muted) !important;
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+}
+
+.project-body {
+  padding: 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+  margin-bottom: 8px !important;
+  line-height: 1.35 !important;
+}
+
+.project-desc {
+  font-size: 0.86rem;
+  color: var(--text-muted) !important;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-tags span {
+  display: inline-block;
+  background: rgba(79, 142, 247, 0.1);
+  color: var(--accent) !important;
+  border: 1px solid rgba(79, 142, 247, 0.2);
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  letter-spacing: 0.02em;
+}
+
+/* =========================================================
+   10. STATS COUNTER
+   ========================================================= */
+.ftco-counter {
+  background: var(--bg-raised) !important;
+}
+
+.block-18 {
+  background: var(--bg-raised) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  padding: 32px 24px !important;
+  text-align: center;
+  margin: 16px;
+  transition: border-color var(--transition), transform var(--transition);
+  min-width: 180px;
+}
+
+.block-18:hover {
+  border-color: rgba(79, 142, 247, 0.3) !important;
+  transform: translateY(-4px);
+}
+
+.block-18 .number {
+  font-size: 3rem !important;
+  font-weight: 800 !important;
+  color: var(--accent) !important;
+  display: block;
+  line-height: 1;
+}
+
+.block-18 .text span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted) !important;
+  margin-top: 6px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* =========================================================
+   11. HIRE ME BANNER
+   ========================================================= */
+.ftco-hireme {
+  position: relative;
+  background-attachment: fixed !important;
+}
+
+.ftco-hireme .overlay {
+  background: rgba(5, 5, 10, 0.80) !important;
+}
+
+.ftco-hireme h2 {
+  font-size: 2.2rem !important;
+  font-weight: 800 !important;
+  color: var(--text) !important;
+}
+
+.ftco-hireme h2 span {
+  color: var(--accent) !important;
+}
+
+.ftco-hireme p {
+  color: var(--text-muted) !important;
+  font-size: 1rem;
+}
+
+/* =========================================================
+   12. CONTACT SECTION
+   ========================================================= */
+.contact-section {
+  background: var(--bg-surface) !important;
+}
+
+.contact-info .box {
+  background: var(--bg-raised) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  transition: border-color var(--transition), transform var(--transition) !important;
+  width: 100%;
+}
+
+.contact-info .box:hover {
+  border-color: rgba(79, 142, 247, 0.3) !important;
+  transform: translateY(-4px);
+}
+
+.contact-info .box .icon {
+  width: 56px !important;
+  height: 56px !important;
+  background: rgba(79, 142, 247, 0.1) !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(79, 142, 247, 0.2) !important;
+  margin: 0 auto 16px !important;
+  font-size: 1.3rem;
+  color: var(--accent) !important;
+}
+
+.contact-info .box .icon span { color: var(--accent) !important; }
+
+.contact-info .box h3 {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+}
+
+.contact-info .box p,
+.contact-info .box p a {
+  color: var(--text-muted) !important;
+  font-size: 0.88rem;
+  transition: color var(--transition);
+}
+
+.contact-info .box p a:hover { color: var(--accent) !important; }
+
+.contact-form {
+  background: var(--bg-raised) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  width: 100%;
+}
+
+.contact-form .form-control {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--text) !important;
+  padding: 12px 16px !important;
+  font-size: 0.9rem !important;
+  transition: border-color var(--transition) !important;
+}
+
+.contact-form .form-control:focus {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(79, 142, 247, 0.15) !important;
+  outline: none;
+}
+
+.contact-form .form-control::placeholder { color: var(--text-muted) !important; }
+
+.contact-form textarea.form-control { resize: vertical; min-height: 140px; }
+
+.contact-img {
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+
+/* =========================================================
+   13. FOOTER
+   ========================================================= */
+.ftco-footer {
+  background: var(--bg-surface) !important;
+  border-top: 1px solid var(--border);
+}
+
+.footer-brand {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: var(--text) !important;
+}
+
+.footer-tagline {
+  color: var(--text-muted) !important;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0 !important;
+}
+
+.ftco-footer-social {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ftco-footer-social li a {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50% !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text-muted) !important;
+  font-size: 1rem;
+  transition: all var(--transition) !important;
+  background: none !important;
+}
+
+.ftco-footer-social li a:hover {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+  background: rgba(79, 142, 247, 0.1) !important;
+  transform: translateY(-3px);
+}
+
+.ftco-footer-social li a span { color: inherit !important; }
+
+.block-23 ul { list-style: none; padding: 0; }
+.block-23 ul li { padding: 8px 0; border-bottom: 1px solid var(--border); }
+.block-23 ul li:last-child { border-bottom: none; }
+.block-23 .icon { color: var(--accent) !important; margin-right: 10px; }
+.block-23 .text { color: var(--text-muted) !important; font-size: 0.88rem; }
+.block-23 a { color: var(--text-muted) !important; transition: color var(--transition); }
+.block-23 a:hover { color: var(--accent) !important; }
+
+.footer-copy {
+  color: var(--text-muted) !important;
+  font-size: 0.85rem;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+/* =========================================================
+   14. LOADER
+   ========================================================= */
+#ftco-loader {
+  background: var(--bg-base) !important;
+}
+
+/* =========================================================
+   15. AOS ANIMATIONS — keep colours consistent
+   ========================================================= */
+[data-aos] { color: inherit !important; }
+
+/* =========================================================
+   16. SCROLLBAR STYLING
+   ========================================================= */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: rgba(79, 142, 247, 0.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* =========================================================
+   17. SELECTION
+   ========================================================= */
+::selection {
+  background: rgba(79, 142, 247, 0.3);
+  color: var(--text);
+}
+
+/* =========================================================
+   18. UTILITY — section dividers / helpers
+   ========================================================= */
+.ftco-section + .ftco-section,
+.ftco-section + section {
+  border-top: 1px solid var(--border);
+}
+
+/* =========================================================
+   19. RESPONSIVE ADJUSTMENTS
+   ========================================================= */
+@media (max-width: 768px) {
+  .hero-name { font-size: 2.5rem !important; }
+  .hero-role { font-size: 1rem !important; }
+  .hero-actions .btn-primary-dark,
+  .hero-actions .btn-outline-dark-custom { display: block; width: 100%; margin: 0 0 12px 0 !important; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .contact-img { display: none; }
+  .resume-nav { position: static; margin-bottom: 28px; }
+  #navi ul { display: flex; flex-wrap: wrap; gap: 8px; }
+  #navi ul li a { padding: 8px 14px; margin-bottom: 0; }
+  .about-tags .tag { font-size: 0.72rem; padding: 3px 10px; }
+}
+
+@media (min-width: 992px) {
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* =========================================================
+   20. PARTNER SECTION — hide (template placeholders)
+   ========================================================= */
+.ftco-partner {
+  display: none !important;
+}
