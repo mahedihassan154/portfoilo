@@ -1,657 +1,973 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Mahedi Hassan - Portfolio</title>
+    <title>Mahedi Hassan — Software Engineer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <meta name="description" content="Mahedi Hassan — Full-Stack Software Engineer with 5+ years specializing in Python, Node.js, Go, and modern web technologies. Based in Dhaka, Bangladesh.">
+    <meta property="og:title" content="Mahedi Hassan — Software Engineer">
+    <meta property="og:description" content="Software Engineer with 5+ years experience building scalable backends, modern APIs, and full-stack applications.">
+    <meta property="og:image" content="images/mahedi.jpg">
+    <meta name="theme-color" content="#0d1117">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <!-- Preconnect for speed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Framework CSS (kept lean) -->
     <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
     <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Main portfolio theme — loads last to win specificity -->
+    <link rel="stylesheet" href="css/portfolio-main.css">
   </head>
+
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	  
-	  
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html"><span>M</span>ahedi</a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-	          <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-	  <section class="hero-wrap js-fullheight">
-      <div class="overlay"></div>
+    <!-- Scroll progress indicator -->
+    <div id="scroll-progress-bar" aria-hidden="true"></div>
+
+    <!-- ════════════════════════════════════════════
+         NAVIGATION
+    ════════════════════════════════════════════ -->
+    <nav class="navbar navbar-expand-lg navbar-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
       <div class="container">
-        <div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
-          <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
-          	<div class="text text-center">
-          		<span class="subheading">Hey! I am</span>
-		  				<h1>Mahedi Hassan</h1>
-			  				<h2>I'm a 
-								  <span
-								     class="txt-rotate"
-								     data-period="2000"
-								     data-rotate='[ "Software Engineer.", "AI Developer.", "Python Programmer.", "Web3 Developer." ]'></span>
-								</h2>
-							</div>
-            </div>
-          </div>
+        <a class="navbar-brand" href="#home-section">
+          <span class="brand-logo">MH</span>
+          <span class="brand-name">Mahedi Hassan</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#ftco-nav" aria-controls="ftco-nav"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav nav ml-auto">
+            <li class="nav-item"><a href="#home-section"     class="nav-link"><span>Home</span></a></li>
+            <li class="nav-item"><a href="#about-section"    class="nav-link"><span>About</span></a></li>
+            <li class="nav-item"><a href="#resume-section"   class="nav-link"><span>Resume</span></a></li>
+            <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
+            <li class="nav-item"><a href="bio.html"          class="nav-link"><span>Life</span></a></li>
+            <li class="nav-item"><a href="#contact-section"  class="nav-link"><span>Contact</span></a></li>
+          </ul>
         </div>
       </div>
-      <div class="mouse">
-				<a href="#" class="mouse-icon">
-					<div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
-				</a>
-			</div>
-    </section>
+    </nav>
 
-    <section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
-    	<div class="container">
-    		<div class="row d-flex no-gutters">
-    			<div class="col-md-6 col-lg-6 d-flex">
-    				<div class="img-about img d-flex align-items-stretch">
-    					<div class="overlay"></div>
-	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/mahedi.jpg);">
-	    				</div>
-    				</div>
-    			</div>
-    			<div class="col-md-6 col-lg-6 pl-md-5 py-5">
-    				<div class="row justify-content-start pb-3">
-		          <div class="col-md-12 heading-section ftco-animate">
-		          	<h1 class="big">About</h1>
-		            <h2 class="mb-4">About Me</h2>
-		            <p>As a software engineer proficient in Python, Node.js, and Go, I specialize in AI development, crafting robust solutions that harness the power of artificial intelligence for enhanced functionality. My expertise extends to Web3 technologies, blockchain development, and creating advanced chatbot systems using Large Language Models (LLM) and Natural Language Processing (NLP).</p>
-                
-                <p>With experience in developing decentralized applications, NFT projects, and medical healthcare AI systems, I bring a versatile skill set to innovative tech projects.</p>
-		            <ul class="about-info mt-4 px-md-0 px-2">
-		            	<li class="d-flex"><span>Name:</span> <span>Mahedi Hassan</span></li>
-		            	<li class="d-flex"><span>Date of birth:</span> <span>June 16, 1998</span></li>
-		            	<li class="d-flex"><span>Address:</span> <span>Jatrabari, Dhaka, Bangladesh</span></li>
-		            	<li class="d-flex"><span>Zip code:</span> <span>1236</span></li>
-		            	<li class="d-flex"><span>Email:</span> <span>mahedihassan8855@gmail.com</span></li>
-		            	<li class="d-flex"><span>Phone: </span> <span>+8801521259984</span></li>
-		            </ul>
-		          </div>
-		        </div>
-	          <div class="counter-wrap ftco-animate d-flex mt-md-3">
-              <div class="text">
-              	<p class="mb-4">
-	                <span class="number" data-number="10">0</span>
-	                <span>Projects completed</span>
-                </p>
-                <p><a href="#" class="btn btn-primary py-3 px-3">Download CV</a></p>
+    <!-- ════════════════════════════════════════════
+         HERO
+    ════════════════════════════════════════════ -->
+    <section class="hero-wrap" id="home-section">
+      <!-- Animated background elements -->
+      <div class="hero-glow glow-1" aria-hidden="true"></div>
+      <div class="hero-glow glow-2" aria-hidden="true"></div>
+      <div class="hero-grid"       aria-hidden="true"></div>
+      <div class="hero-particles"  id="hero-particles" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="row hero-row align-items-center">
+
+          <!-- ── Left: Copy ── -->
+          <div class="col-lg-7 col-md-12 hero-copy" data-aos="fade-right" data-aos-duration="900">
+
+            <div class="hero-badge">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              Available for new opportunities
+            </div>
+
+            <p class="hero-greeting">Hey there, I'm</p>
+            <h1 class="hero-name">
+              Mahedi<br>
+              <span class="hero-name-highlight">Hassan</span>
+            </h1>
+
+            <div class="hero-role-line">
+              <span class="hero-role-static">I build&nbsp;</span>
+              <span class="txt-rotate hero-rotate"
+                    data-period="2400"
+                    data-rotate='["scalable backend systems.","modern web applications.","REST & GraphQL APIs.","full-stack platforms.","microservices architectures.","real-time data pipelines."]'></span>
+            </div>
+
+            <p class="hero-bio">
+              Software Engineer with <strong>5+ years</strong> of experience across Python, Node.js, and Go —
+              specializing in scalable backend systems, modern web applications, and production-grade APIs.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects-section" class="btn-hero btn-hero-solid">
+                View My Work
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="mailto:mahedihassan8855@gmail.com" class="btn-hero btn-hero-ghost">Hire Me</a>
+            </div>
+
+            <div class="hero-socials">
+              <a href="https://github.com/mahedihassan154"     target="_blank" rel="noopener" class="hs-link" aria-label="GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.38-1.34-1.75-1.34-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12.01 12.01 0 0024 12C24 5.37 18.63 0 12 0z"/></svg>
+                GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/mahedi154/"  target="_blank" rel="noopener" class="hs-link" aria-label="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>
+                LinkedIn
+              </a>
+              <a href="mailto:mahedihassan8855@gmail.com" class="hs-link" aria-label="Email">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Email
+              </a>
+            </div>
+          </div>
+
+          <!-- ── Right: Photo ── -->
+          <div class="col-lg-5 col-md-12 hero-photo-col" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+            <div class="hero-photo-frame">
+              <div class="hpf-ring hpf-ring-1" aria-hidden="true"></div>
+              <div class="hpf-ring hpf-ring-2" aria-hidden="true"></div>
+              <div class="hpf-glow"             aria-hidden="true"></div>
+              <img src="images/mahedi.jpg"
+                   alt="Mahedi Hassan — Software Engineer"
+                   class="hero-photo"
+                   loading="eager"
+                   width="380" height="380"
+                   onerror="this.src='https://avatars.githubusercontent.com/u/46110700?v=4'">
+              <!-- Floating badge -->
+              <div class="hpf-badge" aria-hidden="true">
+                <span class="hpf-badge-icon">⚡</span>
+                <div class="hpf-badge-text">
+                  <strong>5+</strong>
+                  <small>Years Exp.</small>
+                </div>
               </div>
-	          </div>
-	        </div>
+              <!-- Stack chips -->
+              <div class="hpf-chip chip-python"  aria-hidden="true">🐍 Python</div>
+              <div class="hpf-chip chip-go"      aria-hidden="true">🔵 Go</div>
+              <div class="hpf-chip chip-web3"    aria-hidden="true">⚡ Node.js</div>
+            </div>
+          </div>
+
         </div>
-    	</div>
+      </div>
+
+      <!-- Scroll cue -->
+      <a href="#about-section" class="hero-scroll" aria-label="Scroll down">
+        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+        <span>Scroll</span>
+      </a>
     </section>
 
-    <section class="ftco-section ftco-partner">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-sm ftco-animate">
-    				<a href="#" class="partner"><img src="images/partner-1.png" class="img-fluid" alt="Technology Partner"></a>
-    			</div>
-    			<div class="col-sm ftco-animate">
-    				<a href="#" class="partner"><img src="images/partner-2.png" class="img-fluid" alt="Technology Partner"></a>
-    			</div>
-    			<div class="col-sm ftco-animate">
-    				<a href="#" class="partner"><img src="images/partner-3.png" class="img-fluid" alt="Technology Partner"></a>
-    			</div>
-    			<div class="col-sm ftco-animate">
-    				<a href="#" class="partner"><img src="images/partner-4.png" class="img-fluid" alt="Technology Partner"></a>
-    			</div>
-    		</div>
-    	</div>
-    </section>
+    <!-- ════════════════════════════════════════════
+         ABOUT
+    ════════════════════════════════════════════ -->
+    <section class="ftco-section about-section" id="about-section">
+      <div class="container">
+        <div class="row align-items-center gy-5">
 
-    <section class="ftco-section ftco-no-pb goto-here" id="resume-section">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-md-3">
-				    <nav id="navi">
-					    <ul>
-					      <li><a href="#page-1">Education</a></li>
-					      <li><a href="#page-2">Experience</a></li>
-					      <li><a href="#page-3">Skills</a></li>
-					      <li><a href="#page-4">Awards</a></li>
-					    </ul>
-					  </nav>
-					</div>
-					<div class="col-md-9">
-					  <div id="page-1" class="page one">
-					  	<h2 class="heading">Education</h2>
-					    <div class="resume-wrap d-flex ftco-animate">
-					    	<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">2016-2021</span>
-		    					<h2>Bachelor of Science in Computer Science & Engineering</h2>
-		    					<span class="position">University of Development Alternative (UODA)</span>
-		    					<p>CGPA 3.14 out of 4. Through my university education, I gained a strong foundation in computer science principles while developing practical programming skills through self-learning and hands-on projects.</p>
-	    					</div>
-	    				</div>
-	    				<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">2014-2016</span>
-		    					<h2>H.S.C</h2>
-		    					<span class="position">Govt. Science College</span>
-		    					<p>Achieved GPA 5 out of 5, demonstrating academic excellence and a strong foundation in scientific disciplines.</p>
-		    				</div>
-	    				</div>
-	    				<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">2005-2014</span>
-		    					<h2>S.S.C</h2>
-		    					<span class="position">A.K High School</span>
-		    					<p>Achieved GPA 5 out of 5, establishing a strong academic foundation that has supported my continued educational success.</p>
-		    				</div>
-	    				</div>
-					  </div>
-
-					  <div id="page-2" class="page two">
-					  	<h2 class="heading">Experience</h2>
-					    <div class="resume-wrap d-flex ftco-animate">
-					    	<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">02/2022-Present</span>
-		    					<h2>Software Engineer</h2>
-		    					<span class="position">Devotrix Inc</span>
-		    					<p>Spearhead the development of AI chatbots using LLM and NLP. Create AI-driven documentation systems. Engineer Web3 decentralized applications (Dapps). Develop backend APIs with Node.js, Python, and Golang. Design databases specializing in MSSQL and PostgreSQL. Oversee NFT projects and token distribution. Contribute to Go projects for private blockchains. Drive medical healthcare AI systems development.</p>
-		    				</div>
-	    				</div>
-                        
-                        <div class="resume-wrap d-flex ftco-animate">
-					    	<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">07/2023-Present</span>
-		    					<h2>Software Engineer</h2>
-		    					<span class="position">Maya Solutions</span>
-		    					<p>Lead Python-based backend script development. Manage and optimize AWS DynamoDB data. Drive efficiency through system integration, technological innovation, and knowledge sharing.</p>
-		    				</div>
-	    				</div>
-                        
-                        <div class="resume-wrap d-flex ftco-animate">
-					    	<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">02/2021-01/2022</span>
-		    					<h2>Associate Software Engineer</h2>
-		    					<span class="position">ESJ Group Inc</span>
-		    					<p>Built backend services and RESTful APIs using DjangoRestFramework and FastAPI. Implemented GraphQL solutions. Designed database architectures and wrote efficient SQL queries. Developed features with Python and created technical documentation. Designed application architectures and sitemaps.</p>
-		    				</div>
-	    				</div>
-                        
-                        <div class="resume-wrap d-flex ftco-animate">
-					    	<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">2019-2020</span>
-		    					<h2>Django Web Developer</h2>
-		    					<span class="position">Freelance</span>
-		    					<p>Gained experience in planning and delivering software platforms used across multiple products. Developed expertise in Web Applications and programming languages including HTML, CSS, Python, JavaScript, Django and API integration.</p>
-		    				</div>
-	    				</div>
-					  </div>
-                      
-					  <div id="page-3" class="page three">
-					  	<h2 class="heading">Skills</h2>
-					  	<div class="row progress-circle mb-5">
-							<!-- Progress bar 1 -->
-							<div class="col-lg-4 mb-4">
-								<div class="bg-white rounded-lg shadow p-4">
-								  <h2 class="h5 font-weight-bold text-center mb-4">Python</h2>
-								  <div class="progress mx-auto" data-value='95'>
-									<span class="progress-left">
-						                <span class="progress-bar border-primary"></span>
-									</span>
-									<span class="progress-right">
-						                <span class="progress-bar border-primary"></span>
-									</span>
-									<div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-									  <div class="h2 font-weight-bold">95<sup class="small">%</sup></div>
-									</div>
-								  </div>
-								</div>
-							</div>
-							<!-- Progress bar 2 -->
-							<div class="col-lg-4 mb-4">
-								<div class="bg-white rounded-lg shadow p-4">
-								  <h2 class="h5 font-weight-bold text-center mb-4">Node.js</h2>
-								  <div class="progress mx-auto" data-value='85'>
-									<span class="progress-left">
-						                <span class="progress-bar border-primary"></span>
-									</span>
-									<span class="progress-right">
-						                <span class="progress-bar border-primary"></span>
-									</span>
-									<div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-									  <div class="h2 font-weight-bold">85<sup class="small">%</sup></div>
-									</div>
-								  </div>
-								</div>
-							</div>
-							<!-- Progress bar 3 -->
-							<div class="col-lg-4 mb-4">
-								<div class="bg-white rounded-lg shadow p-4">
-								  <h2 class="h5 font-weight-bold text-center mb-4">Go</h2>
-								  <div class="progress mx-auto" data-value='75'>
-									<span class="progress-left">
-						                <span class="progress-bar border-primary"></span>
-									</span>
-									<span class="progress-right">
-						                <span class="progress-bar border-primary"></span>
-									</span>
-									<div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-									  <div class="h2 font-weight-bold">75<sup class="small">%</sup></div>
-									</div>
-								  </div>
-								</div>
-							</div>
-					  	</div>
-					  	<div class="row">
-					  		<div class="col-md-6 animate-box">
-									<div class="progress-wrap ftco-animate">
-										<h3>HTML/CSS</h3>
-										<div class="progress">
-										 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="90"
-										  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
-										    <span>90%</span>
-										  	</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 animate-box">
-									<div class="progress-wrap ftco-animate">
-										<h3>JavaScript</h3>
-										<div class="progress">
-										 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="80"
-										  	aria-valuemin="0" aria-valuemax="100" style="width:80%">
-										    <span>80%</span>
-										  	</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 animate-box">
-									<div class="progress-wrap ftco-animate">
-										<h3>FastAPI/Django</h3>
-										<div class="progress">
-										 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="95"
-										  	aria-valuemin="0" aria-valuemax="100" style="width:95%">
-										    <span>95%</span>
-										  	</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 animate-box">
-									<div class="progress-wrap ftco-animate">
-										<h3>NestJS</h3>
-										<div class="progress">
-										 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="85"
-										  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
-										    <span>85%</span>
-										  	</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 animate-box">
-									<div class="progress-wrap ftco-animate">
-										<h3>SQL (MSSQL/PostgreSQL)</h3>
-										<div class="progress">
-										 	<div class="progress-bar color-5" role="progressbar" aria-valuenow="90"
-										  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
-										    <span>90%</span>
-										  	</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 animate-box">
-									<div class="progress-wrap ftco-animate">
-										<h3>MongoDB/Redis</h3>
-										<div class="progress">
-										 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="85"
-										  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
-										    <span>85%</span>
-										  	</div>
-										</div>
-									</div>
-								</div>
-                                <div class="col-md-6 animate-box">
-									<div class="progress-wrap ftco-animate">
-										<h3>AI/LLM/NLP</h3>
-										<div class="progress">
-										 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="90"
-										  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
-										    <span>90%</span>
-										  	</div>
-										</div>
-									</div>
-								</div>
-                                <div class="col-md-6 animate-box">
-									<div class="progress-wrap ftco-animate">
-										<h3>Blockchain/Web3</h3>
-										<div class="progress">
-										 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="80"
-										  	aria-valuemin="0" aria-valuemax="100" style="width:80%">
-										    <span>80%</span>
-										  	</div>
-										</div>
-									</div>
-								</div>
-                                <div class="col-md-6 animate-box">
-									<div class="progress-wrap ftco-animate">
-										<h3>Solidity/Rust</h3>
-										<div class="progress">
-										 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="75"
-										  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
-										    <span>75%</span>
-										  	</div>
-										</div>
-									</div>
-								</div>
-                                <div class="col-md-6 animate-box">
-									<div class="progress-wrap ftco-animate">
-										<h3>React/Redux</h3>
-										<div class="progress">
-										 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="75"
-										  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
-										    <span>75%</span>
-										  	</div>
-										</div>
-									</div>
-								</div>
-					  	</div>
-					  </div>
-					  <div id="page-4" class="page four">
-					    <h2 class="heading">Awards</h2>
-					    
-	    				<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">2014-2015</span>
-		    					<h2>Top 4 Dynamic Web Developer</h2>
-		    					<span class="position">University of Development Alternative</span>
-		    					<p>Awarded for creating innovative responsive dynamic websites with cutting-edge features.</p>
-		    				</div>
-	    				</div>
-					  </div>
-					</div>
-			  </div>
-    	</div>
-    </section>
-
-    <section class="ftco-section ftco-project" id="projects-section">
-		<div class="container-fluid px-md-0">
-			<div class="row no-gutters justify-content-center pb-5">
-				<div class="col-md-12 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Projects</h1>
-					<h2 class="mb-4">My Projects</h2>
-					<p>Highlighted projects that showcase my technical abilities</p>
-				</div>
-			</div>
-			<div class="row no-gutters">
-				<div class="col-md-4">
-					<div class="text text-center p-4">
-						<h3><a href="https://www.nucomply.com/">AI Compliance Banking Assistant</a></h3>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="text text-center p-4">
-						<h3><a href="">Web3 Decentralized App</a></h3>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="text text-center p-4">
-						<h3><a href="">Healthcare AI System</a></h3>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="text text-center p-4">
-						<h3><a href="">NFT Marketplace</a></h3>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="text text-center p-4">
-						<h3><a href="">E-Commerce Platform</a></h3>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="text text-center p-4">
-						<h3><a href="">Dental Practice Website</a></h3>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	
-
-    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-    	<div class="container-fluid px-md-5">
-				<div class="row d-md-flex align-items-center">
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 shadow">
-              <div class="text">
-                <strong class="number" data-number="3">0</strong>
-                <span>Awards</span>
+          <!-- Stats grid -->
+          <div class="col-lg-5 col-md-12" data-aos="fade-right" data-aos-duration="800">
+            <div class="stats-grid">
+              <div class="stat-card sc-blue"   data-aos="zoom-in" data-aos-delay="0">
+                <div class="sc-num"><span class="count-up" data-target="5">0</span><sup>+</sup></div>
+                <p>Years Experience</p>
+              </div>
+              <div class="stat-card sc-purple" data-aos="zoom-in" data-aos-delay="100">
+                <div class="sc-num"><span class="count-up" data-target="6">0</span><sup>+</sup></div>
+                <p>Projects Delivered</p>
+              </div>
+              <div class="stat-card sc-green"  data-aos="zoom-in" data-aos-delay="200">
+                <div class="sc-num"><span class="count-up" data-target="50">0</span><sup>+</sup></div>
+                <p>Public Repositories</p>
+              </div>
+              <div class="stat-card sc-amber"  data-aos="zoom-in" data-aos-delay="300">
+                <div class="sc-num"><span class="count-up" data-target="5">0</span><sup>+</sup></div>
+                <p>Languages</p>
               </div>
             </div>
           </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 shadow">
-              <div class="text">
-                <strong class="number" data-number="10">0</strong>
-                <span>Complete Projects</span>
+
+          <!-- Bio -->
+          <div class="col-lg-7 col-md-12" data-aos="fade-left" data-aos-duration="800">
+            <div class="about-copy">
+              <div class="section-eyebrow">About Me</div>
+              <h2 class="section-heading">
+                Turning ambitious ideas into<br>
+                <span class="gradient-text">production-ready systems</span>
+              </h2>
+
+              <p class="about-lead">
+                I'm a <strong>Full-Stack Software Engineer</strong> based in Dhaka, Bangladesh, with <strong>5+ years</strong> of proven experience
+                building scalable backend systems, modern APIs, and production-ready applications.
+              </p>
+              <p class="about-body">
+                From architecting compliance platforms at NuArcA Labs to building multi-language news aggregation
+                pipelines at Devotrix and Maya Solutions, I deliver high-quality solutions across the stack —
+                whether it's a microservice in Go, a REST API in Python, or a React frontend.
+                I care deeply about code quality, system design, and shipping reliable systems that scale.
+              </p>
+
+              <div class="about-meta-grid">
+                <div class="am-row">
+                  <span class="am-label">📍 Location</span>
+                  <span class="am-value">Dhaka, Bangladesh</span>
+                </div>
+                <div class="am-row">
+                  <span class="am-label">📧 Email</span>
+                  <span class="am-value"><a href="mailto:mahedihassan8855@gmail.com">mahedihassan8855@gmail.com</a></span>
+                </div>
+                <div class="am-row">
+                  <span class="am-label">🏢 Current</span>
+                  <span class="am-value">Devotrix Inc &amp; NuArcA Labs</span>
+                </div>
+                <div class="am-row">
+                  <span class="am-label">🟢 Status</span>
+                  <span class="am-value am-available">Open to Opportunities</span>
+                </div>
+              </div>
+
+              <div class="tech-cloud">
+                <span>Python</span><span>Node.js</span><span>Go</span><span>TypeScript</span>
+                <span>FastAPI</span><span>NestJS</span><span>React</span><span>PostgreSQL</span>
+                <span>MongoDB</span><span>Redis</span><span>GraphQL</span><span>Docker</span>
+                <span>AWS</span><span>gRPC</span><span>REST APIs</span><span>Microservices</span>
+              </div>
+
+              <div class="about-actions">
+                <a href="#resume-section"  class="btn-cta btn-cta-solid">View Resume</a>
+                <a href="#contact-section" class="btn-cta btn-cta-outline">Get In Touch</a>
               </div>
             </div>
           </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 shadow">
-              <div class="text">
-                <strong class="number" data-number="5">0</strong>
-                <span>Companies Worked With</span>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
 
-    <section class="ftco-section ftco-hireme img mt-4" style="background-image: url(images/bg_1.jpg)">
-    	<div class="overlay"></div>
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-md-7 ftco-animate text-center">
-						<h2>I'm <span>Available</span> for Freelancing</h2>
-						<p>Looking for a skilled developer for your AI, Web3, or backend development needs? Let's collaborate!</p>
-						<p class="mb-0"><a href="#contact-section" class="btn btn-primary py-3 px-5">Hire me</a></p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+    <!-- ════════════════════════════════════════════
+         RESUME
+    ════════════════════════════════════════════ -->
+    <section class="ftco-section resume-section bg-section-alt" id="resume-section">
       <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>Let's connect and discuss how I can contribute to your next project</p>
+
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-7 text-center" data-aos="fade-up">
+            <div class="section-eyebrow">Resume</div>
+            <h2 class="section-heading">Experience, Education &amp; Skills</h2>
+            <p class="section-sub">5+ years building production systems, scalable APIs, and full-stack applications.</p>
           </div>
         </div>
 
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box text-center p-4 shadow">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-map-signs"></span>
-          		</div>
-          		<div>
-	          		<h3 class="mb-4">Address</h3>
-		            <p>Jatbari-1236, Dhaka, Bangladesh</p>
-		          </div>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box text-center p-4 shadow">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-phone2"></span>
-          		</div>
-          		<div>
-	          		<h3 class="mb-4">Call me</h3>
-					<p><a href="tel:01521259984">+8801521259984</a></p>
-					<p><a href="tel:01937355645">+8801937355645</a></p>
-	            </div>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box text-center p-4 shadow">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-paper-plane"></span>
-          		</div>
-          		<div>
-	          		<h3 class="mb-4">Email Address</h3>
-		            <p><a href="mailto:mahedihassan8855@gmail.com">mahedihassan8855<br>@gmail.com</a></p>
-		          </div>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box text-center p-4 shadow">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-facebook"></span>
-          		</div>
-          		<div>
-	          		<h3 class="mb-4">Facebook</h3>
-		            <p><a href="https://www.facebook.com/profile.php?id=100009481346800">Md Mahedi Hassan</a></p>
-	            </div>
-	          </div>
+        <!-- Tab nav -->
+        <div class="row justify-content-center mb-4">
+          <div class="col-lg-9">
+            <div class="resume-tabs-wrap">
+              <button class="rtab active" data-pane="tab-exp">💼 Experience</button>
+              <button class="rtab"        data-pane="tab-edu">🎓 Education</button>
+              <button class="rtab"        data-pane="tab-skills">⚡ Skills</button>
+            </div>
           </div>
         </div>
 
-        <div class="row no-gutters block-9">
-          <div class="col-md-6 order-md-last d-flex">
-            <form action="#" class="bg-light p-4 p-md-5 contact-form">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
+        <!-- ── EXPERIENCE ── -->
+        <div class="rtab-pane active" id="tab-exp">
+          <div class="row justify-content-center">
+            <div class="col-lg-9">
+              <div class="timeline">
+
+                <div class="tl-item" data-aos="fade-up" data-aos-delay="0">
+                  <div class="tl-dot tl-dot-blue"></div>
+                  <div class="tl-card">
+                    <div class="tl-top">
+                      <div class="tl-title-wrap">
+                        <h3>Software Engineer</h3>
+                        <p class="tl-company">Devotrix Inc</p>
+                      </div>
+                      <span class="tl-period">Feb 2022 – Present</span>
+                    </div>
+                    <ul class="tl-bullets">
+                      <li>Built intelligent chatbot systems and knowledge management platforms</li>
+                      <li>Developed production backend APIs and microservices in Node.js, Python, and Go</li>
+                      <li>Designed and optimized PostgreSQL and MSSQL databases for high-scale applications</li>
+                      <li>Engineered decentralized applications and smart contract integrations</li>
+                      <li>Implemented automated testing and CI/CD pipelines for reliable deployments</li>
+                      <li>Led technical initiatives for healthcare system modernization</li>
+                    </ul>
+                    <div class="tl-tags">
+                      <span>Python</span><span>Node.js</span><span>Go</span><span>PostgreSQL</span>
+                      <span>MSSQL</span><span>React</span><span>APIs</span><span>Microservices</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tl-item" data-aos="fade-up" data-aos-delay="100">
+                  <div class="tl-dot tl-dot-purple"></div>
+                  <div class="tl-card">
+                    <div class="tl-top">
+                      <div class="tl-title-wrap">
+                        <h3>Software Engineer</h3>
+                        <p class="tl-company">Maya Solutions</p>
+                      </div>
+                      <span class="tl-period">Jul 2023 – Present</span>
+                    </div>
+                    <ul class="tl-bullets">
+                      <li>Lead Python-based backend script development and automation</li>
+                      <li>Managed and optimised AWS DynamoDB data infrastructure</li>
+                      <li>Drove efficiency through system integration and cross-team knowledge sharing</li>
+                    </ul>
+                    <div class="tl-tags">
+                      <span>Python</span><span>AWS</span><span>DynamoDB</span><span>Automation</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tl-item" data-aos="fade-up" data-aos-delay="200">
+                  <div class="tl-dot tl-dot-green"></div>
+                  <div class="tl-card">
+                    <div class="tl-top">
+                      <div class="tl-title-wrap">
+                        <h3>Associate Software Engineer</h3>
+                        <p class="tl-company">ESJ Group Inc</p>
+                      </div>
+                      <span class="tl-period">Feb 2021 – Jan 2022</span>
+                    </div>
+                    <ul class="tl-bullets">
+                      <li>Built backend services and RESTful APIs using Django REST Framework and FastAPI</li>
+                      <li>Designed relational database schemas with SQL</li>
+                      <li>Developed features in Python with full technical documentation</li>
+                      <li>Participated in application and sitemap architecture design</li>
+                    </ul>
+                    <div class="tl-tags">
+                      <span>Python</span><span>FastAPI</span><span>Django</span><span>PostgreSQL</span><span>SQL</span>
+                    </div>
+                  </div>
+                </div>
+
               </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
+            </div>
+          </div>
+        </div>
+
+        <!-- ── EDUCATION ── -->
+        <div class="rtab-pane" id="tab-edu">
+          <div class="row justify-content-center">
+            <div class="col-lg-9">
+              <div class="timeline">
+
+                <div class="tl-item" data-aos="fade-up" data-aos-delay="0">
+                  <div class="tl-dot tl-dot-blue"></div>
+                  <div class="tl-card">
+                    <div class="tl-top">
+                      <div class="tl-title-wrap">
+                        <h3>B.Sc. in Computer Science &amp; Engineering</h3>
+                        <p class="tl-company">University of Development Alternative (UODA) — Dhanmondi 27, Dhaka</p>
+                      </div>
+                      <span class="tl-period">Graduated 2021</span>
+                    </div>
+                    <p class="tl-desc">CGPA: 3.14 / 4.00</p>
+                    <div class="tl-tags">
+                      <span>Algorithms</span><span>Data Structures</span><span>AI</span>
+                      <span>Database Systems</span><span>Software Engineering</span><span>Networks</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tl-item" data-aos="fade-up" data-aos-delay="100">
+                  <div class="tl-dot tl-dot-purple"></div>
+                  <div class="tl-card">
+                    <div class="tl-top">
+                      <div class="tl-title-wrap">
+                        <h3>Higher Secondary Certificate (H.S.C)</h3>
+                        <p class="tl-company">Govt. Science College, Tejgaon, Dhaka-1215</p>
+                      </div>
+                      <span class="tl-period">Passed 2016</span>
+                    </div>
+                    <p class="tl-desc">GPA: 5.00 / 5.00 — Science stream</p>
+                    <div class="tl-tags">
+                      <span>Mathematics</span><span>Physics</span><span>Chemistry</span><span>Science</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tl-item" data-aos="fade-up" data-aos-delay="200">
+                  <div class="tl-dot tl-dot-amber"></div>
+                  <div class="tl-card">
+                    <div class="tl-top">
+                      <div class="tl-title-wrap">
+                        <h3>Self-Directed Learning &amp; Continuous Growth</h3>
+                        <p class="tl-company">Online Platforms &amp; Open Source</p>
+                      </div>
+                      <span class="tl-period">2020 – Present</span>
+                    </div>
+                    <p class="tl-desc">Continuous learning in advanced backend architectures, Go microservices, cloud platforms (AWS, Azure), distributed systems, and modern API design patterns.</p>
+                    <div class="tl-tags">
+                      <span>Go</span><span>AWS</span><span>Azure</span><span>Microservices</span><span>System Design</span>
+                    </div>
+                  </div>
+                </div>
+
               </div>
-              <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── SKILLS ── -->
+        <div class="rtab-pane" id="tab-skills">
+          <div class="row justify-content-center">
+            <div class="col-lg-9">
+              <div class="skills-quad">
+
+                <div class="sq-group" data-aos="fade-up" data-aos-delay="0">
+                  <div class="sq-header sq-blue">
+                    <span class="sq-icon">⚙️</span>
+                    <h4>Languages</h4>
+                  </div>
+                  <div class="sq-bars">
+                    <div class="sqb-row"><div class="sqb-meta"><span>Python</span><span>93%</span></div><div class="sqb-track"><div class="sqb-fill sqbf-blue" data-w="93"></div></div></div>
+                    <div class="sqb-row"><div class="sqb-meta"><span>TypeScript / JavaScript</span><span>87%</span></div><div class="sqb-track"><div class="sqb-fill sqbf-blue" data-w="87"></div></div></div>
+                    <div class="sqb-row"><div class="sqb-meta"><span>Go</span><span>82%</span></div><div class="sqb-track"><div class="sqb-fill sqbf-blue" data-w="82"></div></div></div>
+                    <div class="sqb-row"><div class="sqb-meta"><span>SQL</span><span>88%</span></div><div class="sqb-track"><div class="sqb-fill sqbf-blue" data-w="88"></div></div></div>
+                  </div>
+                </div>
+
+                <div class="sq-group" data-aos="fade-up" data-aos-delay="80">
+                  <div class="sq-header sq-purple">
+                    <span class="sq-icon">🚀</span>
+                    <h4>Frameworks &amp; APIs</h4>
+                  </div>
+                  <div class="sq-bars">
+                    <div class="sqb-row"><div class="sqb-meta"><span>FastAPI / Django REST</span><span>92%</span></div><div class="sqb-track"><div class="sqb-fill sqbf-purple" data-w="92"></div></div></div>
+                    <div class="sqb-row"><div class="sqb-meta"><span>NestJS / Node.js</span><span>86%</span></div><div class="sqb-track"><div class="sqb-fill sqbf-purple" data-w="86"></div></div></div>
+                    <div class="sqb-row"><div class="sqb-meta"><span>React / Redux / Next.js</span><span>82%</span></div><div class="sqb-track"><div class="sqb-fill sqbf-purple" data-w="82"></div></div></div>
+                    <div class="sqb-row"><div class="sqb-meta"><span>GraphQL / gRPC</span><span>78%</span></div><div class="sqb-track"><div class="sqb-fill sqbf-purple" data-w="78"></div></div></div>
+                  </div>
+                </div>
+
+                <div class="sq-group" data-aos="fade-up" data-aos-delay="160">
+                  <div class="sq-header sq-green">
+                    <span class="sq-icon">🗄️</span>
+                    <h4>Databases &amp; Cloud</h4>
+                  </div>
+                  <div class="sq-bars">
+                    <div class="sqb-row"><div class="sqb-meta"><span>PostgreSQL / MSSQL</span><span>90%</span></div><div class="sqb-track"><div class="sqb-fill sqbf-green" data-w="90"></div></div></div>
+                    <div class="sqb-row"><div class="sqb-meta"><span>MySQL / MongoDB / Redis</span><span>84%</span></div><div class="sqb-track"><div class="sqb-fill sqbf-green" data-w="84"></div></div></div>
+                    <div class="sqb-row"><div class="sqb-meta"><span>Pinecone (Vector DB)</span><span>80%</span></div><div class="sqb-track"><div class="sqb-fill sqbf-green" data-w="80"></div></div></div>
+                    <div class="sqb-row"><div class="sqb-meta"><span>AWS DynamoDB / Azure</span><span>76%</span></div><div class="sqb-track"><div class="sqb-fill sqbf-green" data-w="76"></div></div></div>
+                  </div>
+                </div>
+
+                <div class="sq-group" data-aos="fade-up" data-aos-delay="240">
+                  <div class="sq-header sq-amber">
+                    <span class="sq-icon">🛠️</span>
+                    <h4>Development Tools</h4>
+                  </div>
+                  <div class="sq-bars">
+                    <div class="sqb-row"><div class="sqb-meta"><span>Git / GitHub / Version Control</span><span>92%</span></div><div class="sqb-track"><div class="sqb-fill sqbf-amber" data-w="92"></div></div></div>
+                    <div class="sqb-row"><div class="sqb-meta"><span>Docker / Containerization</span><span>78%</span></div><div class="sqb-track"><div class="sqb-fill sqbf-amber" data-w="78"></div></div></div>
+                    <div class="sqb-row"><div class="sqb-meta"><span>Testing (Jest / Pytest)</span><span>85%</span></div><div class="sqb-track"><div class="sqb-fill sqbf-amber" data-w="85"></div></div></div>
+                    <div class="sqb-row"><div class="sqb-meta"><span>API Design (REST / GraphQL)</span><span>90%</span></div><div class="sqb-track"><div class="sqb-fill sqbf-amber" data-w="90"></div></div></div>
+                  </div>
+                </div>
+
               </div>
-              <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+
+              <!-- Tooling row -->
+              <div class="tooling-section" data-aos="fade-up" data-aos-delay="300">
+                <h4 class="tooling-title">Tools &amp; Workflow</h4>
+                <div class="tooling-chips">
+                  <span>Git</span><span>GitHub</span><span>Bitbucket</span>
+                  <span>Jira</span><span>Confluence</span><span>Slack</span><span>ClickUp</span>
+                  <span>Postman</span><span>Jenkins</span><span>Docker</span>
+                  <span>VS Code</span><span>Linux</span>
+                </div>
               </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         PROJECTS
+    ════════════════════════════════════════════ -->
+    <section class="ftco-section" id="projects-section">
+      <div class="container">
+
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-7 text-center" data-aos="fade-up">
+            <div class="section-eyebrow">Portfolio</div>
+            <h2 class="section-heading">Featured Projects</h2>
+            <p class="section-sub">Production platforms and open-source projects — from enterprise SaaS to full-stack applications.</p>
+          </div>
+        </div>
+
+        <div class="projects-masonry">
+
+          <!-- 1. NuComply — FEATURED (large) -->
+          <div class="pj-card pj-featured" data-aos="fade-up" data-aos-delay="0">
+            <div class="pj-visual" style="background:linear-gradient(135deg,#0f2846 0%,#1a3a6b 50%,#0f2846 100%)">
+              <div class="pj-icon-wrap">🛡️</div>
+              <div class="pj-featured-label">Featured</div>
+              <div class="pj-hover-overlay">
+                <a href="https://nucomply.com" target="_blank" rel="noopener" class="pj-ov-btn">🌐 Live Site</a>
+                <a href="https://github.com/mahedihassan154" target="_blank" rel="noopener" class="pj-ov-btn">👾 GitHub</a>
+              </div>
+            </div>
+            <div class="pj-body">
+              <div class="pj-top">
+                <span class="pj-cat">Production SaaS</span>
+                <span class="pj-year">2024 – Present</span>
+              </div>
+              <h3 class="pj-title">NuComply — Compliance Management Platform</h3>
+              <p class="pj-desc">Enterprise compliance management SaaS platform. Built intelligent document analysis pipelines, risk scoring systems, and automated compliance workflows using FastAPI microservices backed by PostgreSQL and Azure.</p>
+              <div class="pj-tags">
+                <span>Python</span><span>FastAPI</span><span>React</span><span>PostgreSQL</span><span>Auth0</span><span>Azure</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. TE News -->
+          <div class="pj-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="pj-visual" style="background:linear-gradient(135deg,#0d2010 0%,#1a3d1f 100%)">
+              <div class="pj-icon-wrap">📰</div>
+              <div class="pj-hover-overlay">
+                <a href="https://github.com/mahedihassan154" target="_blank" rel="noopener" class="pj-ov-btn">👾 GitHub</a>
+              </div>
+            </div>
+            <div class="pj-body">
+              <div class="pj-top"><span class="pj-cat">Production Platform</span><span class="pj-year">2023–2024</span></div>
+              <h3 class="pj-title">TE News — Multi-Language News Platform</h3>
+              <p class="pj-desc">Real-time news aggregation system covering 9 RSS feeds in English &amp; Bangla. Configuration-driven content extraction with specialized handlers for BBC, Al Jazeera, and Guardian. Next.js reader frontend.</p>
+              <div class="pj-tags"><span>Python</span><span>FastAPI</span><span>Next.js</span><span>PostgreSQL</span><span>Redis</span></div>
+            </div>
+          </div>
+
+          <!-- 3. Go Microservices -->
+          <div class="pj-card" data-aos="fade-up" data-aos-delay="160">
+            <div class="pj-visual" style="background:linear-gradient(135deg,#2a1040 0%,#3d1a60 100%)">
+              <div class="pj-icon-wrap">⚙️</div>
+              <div class="pj-hover-overlay">
+                <a href="https://github.com/mahedihassan154" target="_blank" rel="noopener" class="pj-ov-btn">👾 GitHub</a>
+              </div>
+            </div>
+            <div class="pj-body">
+              <div class="pj-top"><span class="pj-cat">Backend / Microservices</span><span class="pj-year">2023</span></div>
+              <h3 class="pj-title">Go Microservices Architecture</h3>
+              <p class="pj-desc">Production-grade microservices system with gRPC inter-service communication, API gateway, service discovery, distributed tracing, and comprehensive monitoring.</p>
+              <div class="pj-tags"><span>Go</span><span>gRPC</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span></div>
+            </div>
+          </div>
+
+          <!-- 4. Genocide Education -->
+          <div class="pj-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="pj-visual" style="background:linear-gradient(135deg,#2e1010 0%,#4a1a1a 100%)">
+              <div class="pj-icon-wrap">📚</div>
+              <div class="pj-hover-overlay">
+                <a href="https://github.com/mahedihassan154" target="_blank" rel="noopener" class="pj-ov-btn">👾 GitHub</a>
+              </div>
+            </div>
+            <div class="pj-body">
+              <div class="pj-top"><span class="pj-cat">Civic Tech</span><span class="pj-year">2023</span></div>
+              <h3 class="pj-title">Genocide Education Platform</h3>
+              <p class="pj-desc">Full-stack platform for genocide awareness and historical research. NestJS + MySQL REST backend with Swagger, React/Vite frontend, and rich media support.</p>
+              <div class="pj-tags"><span>NestJS</span><span>MySQL</span><span>React</span><span>TypeScript</span></div>
+            </div>
+          </div>
+
+          <!-- 5. GraphQL API Platform -->
+          <div class="pj-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="pj-visual" style="background:linear-gradient(135deg,#0a2030 0%,#102840 100%)">
+              <div class="pj-icon-wrap">🚀</div>
+              <div class="pj-hover-overlay">
+                <a href="https://github.com/mahedihassan154" target="_blank" rel="noopener" class="pj-ov-btn">👾 GitHub</a>
+              </div>
+            </div>
+            <div class="pj-body">
+              <div class="pj-top"><span class="pj-cat">Full-Stack / API</span><span class="pj-year">2023</span></div>
+              <h3 class="pj-title">GraphQL API Platform</h3>
+              <p class="pj-desc">Modern GraphQL API server with advanced query optimization, DataLoader caching, real-time subscriptions, and comprehensive type safety. React Apollo client integration.</p>
+              <div class="pj-tags"><span>NestJS</span><span>GraphQL</span><span>React</span><span>TypeScript</span></div>
+            </div>
+          </div>
+
+          <!-- 6. NestJS WebSocket -->
+          <div class="pj-card" data-aos="fade-up" data-aos-delay="160">
+            <div class="pj-visual" style="background:linear-gradient(135deg,#102a10 0%,#1a401a 100%)">
+              <div class="pj-icon-wrap">⚡</div>
+              <div class="pj-hover-overlay">
+                <a href="https://github.com/mahedihassan154/nestJS-websocket" target="_blank" rel="noopener" class="pj-ov-btn">👾 GitHub</a>
+              </div>
+            </div>
+            <div class="pj-body">
+              <div class="pj-top"><span class="pj-cat">Real-Time Systems</span><span class="pj-year">2022</span></div>
+              <h3 class="pj-title">NestJS WebSocket Server (★ 3)</h3>
+              <p class="pj-desc">High-performance real-time WebSocket server in NestJS/TypeScript with full Jest test coverage. Most-starred personal repo — demonstrates clean, scalable event-driven architecture.</p>
+              <div class="pj-tags"><span>NestJS</span><span>TypeScript</span><span>WebSockets</span><span>Jest</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         CONTACT
+    ════════════════════════════════════════════ -->
+    <section class="ftco-section bg-section-alt" id="contact-section">
+      <div class="container">
+
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-7 text-center" data-aos="fade-up">
+            <div class="section-eyebrow">Contact</div>
+            <h2 class="section-heading">Let's Build Something Together</h2>
+            <p class="section-sub">Open to full-time roles, freelance projects, and collaborative ideas. Reach out — I respond within 24 hours.</p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center gy-4">
+
+          <!-- Contact info panel -->
+          <div class="col-lg-4 col-md-12" data-aos="fade-right" data-aos-duration="800">
+            <div class="contact-panel">
+              <h3>Get in Touch</h3>
+              <div class="cp-items">
+                <div class="cp-item">
+                  <div class="cp-icon cp-ic-blue">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </div>
+                  <div>
+                    <p class="cp-label">Email</p>
+                    <a href="mailto:mahedihassan8855@gmail.com" class="cp-val">mahedihassan8855@gmail.com</a>
+                  </div>
+                </div>
+                <div class="cp-item">
+                  <div class="cp-icon cp-ic-purple">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>
+                  </div>
+                  <div>
+                    <p class="cp-label">LinkedIn</p>
+                    <a href="https://www.linkedin.com/in/mahedi154/" target="_blank" rel="noopener" class="cp-val">linkedin.com/in/mahedi154</a>
+                  </div>
+                </div>
+                <div class="cp-item">
+                  <div class="cp-icon cp-ic-green">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.38-1.34-1.75-1.34-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12.01 12.01 0 0024 12C24 5.37 18.63 0 12 0z"/></svg>
+                  </div>
+                  <div>
+                    <p class="cp-label">GitHub</p>
+                    <a href="https://github.com/mahedihassan154" target="_blank" rel="noopener" class="cp-val">github.com/mahedihassan154</a>
+                  </div>
+                </div>
+                <div class="cp-item">
+                  <div class="cp-icon cp-ic-amber">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+                  </div>
+                  <div>
+                    <p class="cp-label">Phone</p>
+                    <a href="tel:+8801521259984" class="cp-val">+880 1521-259984</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact form -->
+          <div class="col-lg-8 col-md-12" data-aos="fade-left" data-aos-duration="800">
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/mahedihassan8855@gmail.com" method="POST" novalidate>
+              <div class="cf-row">
+                <div class="cf-group">
+                  <label for="cf-name">Full Name</label>
+                  <input type="text"  id="cf-name"    name="name"    class="cf-input" placeholder="John Doe" required>
+                </div>
+                <div class="cf-group">
+                  <label for="cf-email">Email Address</label>
+                  <input type="email" id="cf-email"   name="email"   class="cf-input" placeholder="john@example.com" required>
+                </div>
+              </div>
+              <div class="cf-group">
+                <label for="cf-subject">Subject</label>
+                <input type="text"     id="cf-subject" name="subject" class="cf-input" placeholder="Job opportunity / Freelance project / Collaboration" required>
+              </div>
+              <div class="cf-group">
+                <label for="cf-message">Message</label>
+                <textarea id="cf-message" name="message" class="cf-input cf-textarea" rows="5" placeholder="Tell me about your project, role, or idea..." required></textarea>
+              </div>
+              <button type="submit" class="cf-submit" id="cf-submit">
+                <span class="cf-submit-text">Send Message</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+              <p class="cf-note" id="cf-note"></p>
             </form>
-          
           </div>
 
-          <div class="col-md-6 d-flex">
-          	<div class="img" style="background-image: url(images/mahedi.jpg);"></div>
-          </div>
         </div>
       </div>
     </section>
-		
 
-    <footer class="ftco-footer ftco-section">
+    <!-- ════════════════════════════════════════════
+         FOOTER
+    ════════════════════════════════════════════ -->
+    <footer class="site-footer">
       <div class="container">
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-				<li class="ftco-animate"><a href="https://github.com/mahedihassan154"><span class="icon-github"></span></a></li>
-				<li class="ftco-animate"><a href="https://www.linkedin.com/in/mahedi154/"><span class="icon-linkedin"></span></a></li>
-                <li class="ftco-animate"><a href="https://www.facebook.com/mahedi154"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="https://www.instagram.com/mahedi154/"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
+        <div class="footer-grid">
+          <div class="fg-brand">
+            <span class="brand-logo-sm">MH</span>
+            <span class="fg-name">Mahedi Hassan</span>
+            <p class="fg-tag">Building intelligent systems,<br>one commit at a time.</p>
           </div>
-          
-          
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">Jatbari-1236, Dhaka, Bangladesh</span></li>
-	                <li><a href="tel:01937355645"><span class="icon icon-phone"></span><span class="text">+8801937355645</span></a></li>
-	                <li><a href="mailto:mahedihassan8855@gmail.com"><span class="icon icon-envelope"></span><span class="text">mahedihassan8855@gmail.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
+          <div class="fg-links">
+            <h5>Navigation</h5>
+            <a href="#home-section">Home</a>
+            <a href="#about-section">About</a>
+            <a href="#resume-section">Resume</a>
+            <a href="#projects-section">Projects</a>
+            <a href="#contact-section">Contact</a>
+          </div>
+          <div class="fg-contact">
+            <h5>Connect</h5>
+            <a href="mailto:mahedihassan8855@gmail.com">mahedihassan8855@gmail.com</a>
+            <a href="https://github.com/mahedihassan154" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/mahedi154/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.instagram.com/mahedi154/" target="_blank" rel="noopener">Instagram</a>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p>
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made by @ Mahedi Hassan
-  </p>
-          </div>
+        <div class="footer-bottom">
+          <p>© <span id="fyear"></span> Mahedi Hassan · Software Engineer · Dhaka, Bangladesh</p>
+          <p class="footer-craft">Crafted with ☕ and <span class="footer-heart">♥</span></p>
         </div>
       </div>
     </footer>
+
+    <!-- ════════════════════════════════════════════
+         PAC-MAN FAB
+    ════════════════════════════════════════════ -->
+    <button class="pm-fab" id="pmFab" aria-label="Play Pac-Man mini game" title="🎮 Mini Game">
+      <span class="pm-fab-icon">🎮</span>
+      <span class="pm-fab-ripple" aria-hidden="true"></span>
+    </button>
+
+    <!-- ════════════════════════════════════════════
+         PAC-MAN MODAL
+    ════════════════════════════════════════════ -->
+    <div class="pm-backdrop" id="pmBackdrop"></div>
+    <div class="pm-modal"    id="pmModal" aria-hidden="true" role="dialog" aria-labelledby="pmTitle">
+      <div class="pm-modal-inner">
+        <div class="pm-header">
+          <h3 id="pmTitle">🕹 Pac-Man</h3>
+          <div class="pm-header-right">
+            <span class="pm-hint">Arrow keys · WASD · Swipe</span>
+            <button class="pm-close" id="pmClose" aria-label="Close">✕</button>
+          </div>
+        </div>
+        <div class="pm-canvas-wrap">
+          <canvas id="pacCanvas" width="560" height="560" aria-label="Pac-Man game"></canvas>
+          <div class="pm-splash" id="pmSplash">
+            <div class="pm-splash-pac" aria-hidden="true"></div>
+            <h4>PAC-MAN</h4>
+            <p>Eat all the dots, dodge the ghosts!</p>
+            <button class="pm-start-btn" id="pmStart">▶ Play</button>
+          </div>
+        </div>
+        <div class="pm-footer">
+          <span>Score <strong id="pmScore">0</strong></span>
+          <span>Best <strong id="pmBest">0</strong></span>
+          <span>Lives <span id="pmLives">❤️❤️❤️</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════
+         SCRIPTS
+    ════════════════════════════════════════════ -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/pacman.js"></script>
+
+    <script>
+    /* ─── AOS ──────────────────────────────────────────────── */
+    AOS.init({ duration: 750, easing: 'ease-out-cubic', once: true, offset: 50 });
+
+    /* ─── Footer year ───────────────────────────────────────── */
+    document.getElementById('fyear').textContent = new Date().getFullYear();
+
+    /* ─── Scroll progress bar ───────────────────────────────── */
+    var _pb = document.getElementById('scroll-progress-bar');
+    window.addEventListener('scroll', function () {
+      var s = document.documentElement, t = s.scrollTop || document.body.scrollTop;
+      var h = s.scrollHeight - s.clientHeight;
+      _pb.style.width = (h > 0 ? (t / h) * 100 : 0) + '%';
+    }, { passive: true });
+
+    /* ─── Navbar glass on scroll ────────────────────────────── */
+    var _nav = document.getElementById('ftco-navbar');
+    window.addEventListener('scroll', function () {
+      _nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    /* ─── TxtRotate (typing animation) ─────────────────────── */
+    var TxtRotate = function (el, toRotate, period) {
+      this.toRotate = toRotate; this.el = el; this.loopNum = 0;
+      this.period = parseInt(period, 10) || 2000;
+      this.txt = ''; this.isDeleting = false; this.tick();
+    };
+    TxtRotate.prototype.tick = function () {
+      var full = this.toRotate[this.loopNum % this.toRotate.length];
+      this.txt = this.isDeleting
+        ? full.substring(0, this.txt.length - 1)
+        : full.substring(0, this.txt.length + 1);
+      this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+      var delta = 110 - Math.random() * 50;
+      if (this.isDeleting) delta /= 2;
+      if (!this.isDeleting && this.txt === full)  { delta = this.period; this.isDeleting = true; }
+      if  (this.isDeleting && this.txt === '')    { this.isDeleting = false; this.loopNum++; delta = 450; }
+      var self = this; setTimeout(function () { self.tick(); }, delta);
+    };
+    window.addEventListener('load', function () {
+      [].forEach.call(document.querySelectorAll('.txt-rotate'), function (el) {
+        var r = el.getAttribute('data-rotate'), p = el.getAttribute('data-period');
+        if (r) new TxtRotate(el, JSON.parse(r), p);
+      });
+    });
+
+    /* ─── Resume tabs ───────────────────────────────────────── */
+    function initResumeTabs() {
+      var rtabs  = document.querySelectorAll('.rtab');
+      var rpanes = document.querySelectorAll('.rtab-pane');
+      
+      if (rtabs.length === 0 || rpanes.length === 0) {
+        console.error('Resume tabs not found');
+        return;
+      }
+      
+      rtabs.forEach(function (tab) {
+        tab.addEventListener('click', function (e) {
+          e.preventDefault();
+          console.log('Tab clicked:', tab.getAttribute('data-pane'));
+          rtabs.forEach(function (t) { t.classList.remove('active'); });
+          rpanes.forEach(function (p) { p.classList.remove('active'); });
+          tab.classList.add('active');
+          var paneId = tab.getAttribute('data-pane');
+          var pane = document.getElementById(paneId);
+          if (pane) {
+            pane.classList.add('active');
+            console.log('Activated pane:', paneId);
+            if (paneId === 'tab-skills') fireSkillBars();
+          } else {
+            console.error('Pane not found:', paneId);
+          }
+        });
+      });
+    }
     
-  
+    // Initialize tabs when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initResumeTabs);
+    } else {
+      initResumeTabs();
+    }
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+    /* ─── Skill bars ────────────────────────────────────────── */
+    var _barsRun = false;
+    function fireSkillBars() {
+      if (_barsRun) return; _barsRun = true;
+      document.querySelectorAll('.sqb-fill').forEach(function (b) {
+        setTimeout(function () {
+          b.style.width = b.getAttribute('data-w') + '%';
+        }, 80);
+      });
+    }
 
+    /* ─── Counter animation ─────────────────────────────────── */
+    new IntersectionObserver(function (entries, obs) {
+      if (entries[0].isIntersecting) {
+        document.querySelectorAll('.count-up').forEach(function (el) {
+          var target = +el.getAttribute('data-target'), n = 0;
+          var step = Math.max(1, Math.ceil(target / 50));
+          var t = setInterval(function () { n = Math.min(n + step, target); el.textContent = n; if (n >= target) clearInterval(t); }, 35);
+        });
+        obs.disconnect();
+      }
+    }, { threshold: 0.3 }).observe(document.querySelector('.stats-grid'));
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  
-  <script src="js/main.js"></script>
-    
+    /* ─── Lightweight particle system ───────────────────────── */
+    (function () {
+      var c = document.getElementById('hero-particles');
+      if (!c) return;
+      for (var i = 0; i < 45; i++) {
+        var d = document.createElement('span');
+        d.className = 'p-dot';
+        d.style.cssText = 'left:' + (Math.random()*100) + '%;top:' + (Math.random()*100)
+          + '%;animation-delay:' + (Math.random()*7) + 's;animation-duration:'
+          + (4 + Math.random()*8) + 's;width:' + (2 + Math.random()*3)
+          + 'px;height:' + (2 + Math.random()*3) + 'px;opacity:' + (0.15 + Math.random()*0.4);
+        c.appendChild(d);
+      }
+    }());
+
+    /* ─── Contact form ──────────────────────────────────────── */
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn  = document.getElementById('cf-submit');
+      var note = document.getElementById('cf-note');
+      btn.disabled = true;
+      btn.querySelector('.cf-submit-text').textContent = 'Sending…';
+      fetch(this.action, { method: 'POST', body: new FormData(this), headers: { Accept: 'application/json' } })
+        .then(function (r) {
+          if (r.ok) {
+            note.textContent = '✅ Message sent! I\'ll reply within 24 hours.';
+            note.className = 'cf-note cf-success';
+            document.getElementById('contactForm').reset();
+          } else {
+            note.textContent = '❌ Something went wrong. Email me directly at mahedihassan8855@gmail.com';
+            note.className = 'cf-note cf-error';
+          }
+        })
+        .catch(function () {
+          note.textContent = '❌ Network error. Email me at mahedihassan8855@gmail.com';
+          note.className = 'cf-note cf-error';
+        })
+        .finally(function () {
+          btn.disabled = false;
+          btn.querySelector('.cf-submit-text').textContent = 'Send Message';
+        });
+    });
+
+    /* ─── Pac-Man modal wiring ──────────────────────────────── */
+    (function () {
+      var fab      = document.getElementById('pmFab');
+      var modal    = document.getElementById('pmModal');
+      var backdrop = document.getElementById('pmBackdrop');
+      var close    = document.getElementById('pmClose');
+      var startBtn = document.getElementById('pmStart');
+      var splash   = document.getElementById('pmSplash');
+
+      function open()  {
+        modal.classList.add('pm-open'); backdrop.classList.add('pm-open');
+        modal.removeAttribute('aria-hidden'); document.body.style.overflow = 'hidden';
+      }
+      function shut()  {
+        modal.classList.remove('pm-open'); backdrop.classList.remove('pm-open');
+        modal.setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';
+        if (window.PacMan && window.PacMan.pause) window.PacMan.pause();
+      }
+      fab.addEventListener('click', open);
+      close.addEventListener('click', shut);
+      backdrop.addEventListener('click', shut);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') shut(); });
+      startBtn.addEventListener('click', function () {
+        splash.style.display = 'none';
+        if (window.PacMan) window.PacMan.start();
+      });
+    }());
+    </script>
   </body>
 </html>
